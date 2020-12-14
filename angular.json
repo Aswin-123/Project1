@@ -38,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/AngularTaskCrud",
+            "outputPath": "dist",
             "index": "src/index.html",
             "allowedCommonJsDependencies":   ["crypto-js", "@aws-sdk/eventstream-marshaller", "buffer", "js-cookie", 
               "@aws-crypto", "zen-observable", "@aws-sdk/util-utf8-node", "@aws-crypto/sha256-js", "@aws-sdk/util-buffer-from",
