@@ -1,0 +1,80 @@
+
+.grid-table
+{
+ display:table ;
+}
+.thead
+{
+    display: table-header-group;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    text-align: center;
+    background-color: #f0f8f0;
+}
+.tbody
+{
+    display:table-row-group;
+}
+.tr
+{
+  display: table-row;
+  
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .form-submit-button {
+
+    background: #0066A2;
+    
+    color: white;
+    
+    border-style: outset;
+    
+    border-color: #0066A2;
+    
+    height: 50px;
+    
+    width: 100px;
+    
+    font: bold 15px arial, sans-serif;
+    
+    text-shadow:none;
+    
+    }
+.td
+{
+    display: table-cell;
+    padding: 10px 1px 1px 5px;
+}
+
+.thead div.tr div.td:last-child{
+    background-color: #fff;
+}
+i:hover{
+    cursor:pointer;
+}
+input.ng-invalid.ng-touched,select.ng-invalid.ng-touched{
+    border-color: #dc3545;
+}
+.elementToFadeInAndOut{
+    -webkit-animation: fadeinout 2s linear forwards;
+    animation: fadeinout  2s linear forwards ;
+    opacity:0;
+}
+
+@-webkit-keyframes fadeinout{
+    50% { opacity: 1; }
+}
+
+@keyframes fadeinout{
+    50% { opacity: 1; }  
+}

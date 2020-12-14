@@ -1,0 +1,22 @@
+<div class="cart">
+    <div class="col-md-12">
+      <span class="page-header">DASHBOARD</span>
+    </div>
+    <div>
+              <ngb-tabset [activeId]="activeTab"  #tabs (tabChange)="onTabChange()"  >
+       
+        
+        <ngb-tab title="All" id='all'>
+          <ng-template ngbTabContent><app-task-list [status] ="aaaa" ></app-task-list></ng-template>
+        </ngb-tab>
+        <ngb-tab title="Upcoming" id='upcoming'>
+          <ng-template ngbTabContent><app-task-list [status] ="aaaa"  ></app-task-list></ng-template>
+        </ngb-tab>
+        <ngb-tab title="Completed" id='completed'>
+          <ng-template ngbTabContent> <app-task-list [status] ="aaaa" ></app-task-list> </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+
+
+    </div>
+  </div>

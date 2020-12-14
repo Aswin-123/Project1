@@ -1,0 +1,20 @@
+.header {
+    width: 100%;
+    background-color: #252b4d;
+    font-size: 45px;
+    color: rgb(201, 94, 94);
+    height: 100px;
+    line-height: 100px;
+  }
+  .sub-header {
+    font-size: 20px;
+  }
+  .layout {
+    min-height: 300px;
+  }
+  .footer {
+    width: 100%;
+    background-color: #151933;
+    text-align: center;
+    color: rgb(155, 87, 87);
+  }

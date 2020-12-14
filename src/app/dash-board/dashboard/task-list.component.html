@@ -1,0 +1,21 @@
+<div class= "detailsList">
+
+
+
+
+    <div *ngIf ="status === 'all'" >
+        <div *ngFor="let task of tasks">
+            <app-task-details [task]="task"></app-task-details>
+        </div>
+    </div>  
+        <div *ngIf ="status ==='upcoming'" >
+        <div *ngFor="let task of todosUp">
+            <app-task-details [task]="task"></app-task-details>
+        </div>
+    </div> 
+    <div *ngIf="status === 'completed'" >
+        <div *ngFor="let task of todosCom">
+            <app-task-details [task]="task"></app-task-details>
+        </div>
+    </div> 
+</div>
