@@ -26,7 +26,7 @@ export class TaskMasterComponent implements OnInit {
 
     this.employeTaskServiceService.getTaskDetailslist().subscribe(
       res => {
-        if (res == []) {
+        if (res === []) {
           this.addtaskMasterForm();
         }
         else {
@@ -54,7 +54,7 @@ export class TaskMasterComponent implements OnInit {
     }));
   }
   recordSubmit(fg: FormGroup){
-    if (fg.value.task_Id == 0) {
+    if (fg.value.task_Id === 0) {
       this.employeTaskServiceService.postTaskList(fg.value).subscribe((res: any) => {
       fg.patchValue({ task_Id: res.task_Id});
       this.showNotification('insert');
@@ -67,7 +67,7 @@ export class TaskMasterComponent implements OnInit {
     }
   }
     onDelete(task_Id, i){
-      if (task_Id == 0) {
+      if (task_Id === 0) {
         this.taskMasterForms.removeAt(i);
       }
       else if (confirm('Are you sure to delete this record ?')) {
