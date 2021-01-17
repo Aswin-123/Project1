@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations' ;
 import { AppComponent } from './app.component';
 import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -59,6 +59,15 @@ const routes: Routes = [
           (u) => u.TaskEntryModule
           ),
       },
+      {
+        path: 'employe-salary',
+        canActivateChild: [AuthGuard],
+        data: {routeAccess: 'canAccessTODO'},
+        loadChildren: () =>
+        import('./employee-details/employee-details.module').then(
+          (u) => u.EmployeeDetailsModule
+          ),
+      },
     ]
   },
   {
@@ -78,6 +87,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
     NgbModule,

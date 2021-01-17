@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { fade, slide } from 'src/app/Animation';
 import { SecurityService } from 'src/app/Security/security.service';
 import { Login } from './Login';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [
+    fade ,slide
+  ]
 })
 export class LoginComponent implements OnInit {
 
@@ -26,7 +30,7 @@ export class LoginComponent implements OnInit {
       }
     },
     (error) => {
-      alert('invalide user or password');
+      alert('Invalid User or Password');
     }
     );
   }

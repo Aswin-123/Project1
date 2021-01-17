@@ -1,6 +1,9 @@
+
+
 import { Component, OnInit } from '@angular/core';
 import {Form, FormArray, FormGroup, Validators} from '@angular/forms';
 import {FormBuilder} from '@angular/forms';
+import { fade, slide } from 'src/app/Animation';
 import { EmployeTaskServiceService } from 'src/app/shared/employe-task-service.service';
 import { TaskServiceService } from 'src/app/shared/task-service.service';
 
@@ -9,7 +12,10 @@ import { TaskServiceService } from 'src/app/shared/task-service.service';
 @Component({
   selector: 'app-task-master',
   templateUrl: './task-master.component.html',
-  styleUrls: ['./task-master.component.css']
+  styleUrls: ['./task-master.component.css'],
+  animations: [
+    fade ,slide
+  ]
 })
 export class TaskMasterComponent implements OnInit {
 

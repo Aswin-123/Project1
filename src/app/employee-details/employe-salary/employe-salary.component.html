@@ -1,0 +1,260 @@
+<div @slide class="card logPanel">
+    <article class="card-body">
+      <ngb-alert 
+      [dismissible]="true" 
+      [type]="alert.type" 
+      (close)="closeAlert()" 
+      *ngIf="alert.isShowAlert">
+    {{ alert.message }} 
+    </ngb-alert>
+    <h4 @slide class="card-title text-center mb-4 mt-1">Employee Details Updation</h4>
+      <span class="page-header">Save Employee Details </span>
+  <button @slide class="btn btn-success pull-right" routerLink="/Home" >Back</button>
+    <hr />
+    <form @slide [formGroup] = "employeeForm" (ngSubmit)="saveEmployeDetails()">
+        <div class="form-group">
+            <label for="employee_Name">Employee Name</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="employee_Name"
+                id="employee_Name"
+                [ngClass]="{'invalid-control':validatorObj.employee_Name.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.employee_Name.errorMessage}}
+            </span>
+        </div>
+    <div formGroupName= "passportGroup">
+         <div class="form-group">
+            <label for="passport_Number">Passport Number</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="passport_Number"
+                id="passport_Number"
+                [ngClass]="{'invalid-control':validatorObj.passport_Number.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.passport_Number.errorMessage}}
+            </span>
+        </div>
+       <div class="form-group">
+            <label for="passport_Nationality">Passpor Nationality</label>
+            <select
+                id="passport_Nationality"
+                class="form-control"
+                formControlName="passport_Nationality"
+                [ngClass]="{'invalid-control':validatorObj.passport_Nationality.errorMessage}"
+            >
+            <option value = "">SELECT</option>
+            <option value = "INDIA" >INDIA</option>
+            <option value = "UK" >UK</option>
+            <option value = "USA">USA</option>
+            <option value = "CHINA">CHINA</option>
+            </select>
+            <span class = "text-danger" >
+                {{validatorObj.passport_Nationality.errorMessage}}
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="passport_Place_Issue">Passport Place issue</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="passport_Place_Issue"
+                id="passport_Place_Issue"
+                [ngClass]="{'invalid-control':validatorObj.passport_Place_Issue.errorMessage}"
+            />
+            <span class = "text-danger" >
+                {{validatorObj.passport_Place_Issue.errorMessage}}
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="passport_Date_Issue">Passport Date issue</label>
+            <input
+                type="Date"
+                class="form-control"
+                formControlName="passport_Date_Issue"
+                id="passport_Date_Issue"
+                [ngClass]="{'invalid-control':validatorObj.passport_Date_Issue.errorMessage}"
+            />
+            <span class = "text-danger" >
+                {{validatorObj.passport_Date_Issue.errorMessage}}
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="passport_Expiry_Date">Passport Expiry Date</label>
+            <input
+                type="Date"
+                class="form-control"
+                formControlName="passport_Expiry_Date"
+                id="passport_Expiry_Date"
+                [ngClass]="{'invalid-control':validatorObj.passport_Expiry_Date.errorMessage}"
+            />
+            <span class = "text-danger" >
+                {{validatorObj.passport_Expiry_Date.errorMessage}}
+            </span>
+        </div>        
+    </div> 
+        <div class="form-group">
+            <label for="place_Birth">Birth Place</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="place_Birth"
+                id="place_Birth"
+                [ngClass]="{'invalid-control':validatorObj.place_Birth.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.place_Birth.errorMessage}}
+            </span>
+        </div>
+    <div formGroupName= "VisaGroup"> 
+        <div class="form-group">
+            <label for="visa_ID">Visa ID</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="visa_ID"
+                id="visa_ID"
+                [ngClass]="{'invalid-control':validatorObj.visa_ID.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.visa_ID.errorMessage}}
+            </span>
+        </div>    
+         <div class="form-group">
+            <label for="visa_Type">Visa Type</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="visa_Type"
+                id="visa_Type"
+                [ngClass]="{'invalid-control':validatorObj.visa_Type.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.visa_Type.errorMessage}}
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="place_Visa_Issued">Place Visa Issued</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="place_Visa_Issued"
+                id="place_Visa_Issued"
+                [ngClass]="{'invalid-control':validatorObj.place_Visa_Issued.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.place_Visa_Issued.errorMessage}}
+            </span>
+        </div> 
+        <div class="form-group">
+            <label for="visa_Nationality">Visa Nationality</label>
+            <select
+                id="visa_Nationality"
+                class="form-control"
+                formControlName="visa_Nationality"
+                [ngClass]="{'invalid-control':validatorObj.visa_Nationality.errorMessage}"
+            >
+            <option value = "">SELECT</option>
+            <option value = "INDIA" >INDIA</option>
+            <option value = "UK" >UK</option>
+            <option value = "USA">USA</option>
+            <option value = "CHINA">CHINA</option>
+            </select>
+            <span class = "text-danger" >
+                {{validatorObj.visa_Nationality.errorMessage}}
+            </span>
+        </div>
+  
+         <div class="form-group">
+            <label for="visa_Expiry_Date">Visa Expiry Date</label>
+            <input
+                type="Date"
+                class="form-control"
+                formControlName="visa_Expiry_Date"
+                id="visa_Expiry_Date"
+                [ngClass]="{'invalid-control':validatorObj.visa_Expiry_Date.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.visa_Expiry_Date.errorMessage}}
+            </span>
+        </div>        
+    </div>
+    <div formGroupName= "SalaryGroup">
+        <div class="form-group">
+            <label for="basic_Salary">Basic Salary</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="basic_Salary"
+                id="basic_Salary"
+                [ngClass]="{'invalid-control':validatorObj.basic_Salary.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.basic_Salary.errorMessage}}
+            </span>
+        </div> 
+            <div class="form-group">
+            <label for="net_Salary">Net Salary </label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="net_Salary"
+                id="net_Salary"
+                [ngClass]="{'invalid-control':validatorObj.net_Salary.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.net_Salary.errorMessage}}
+            </span>
+        </div> 
+        <div class="form-group">
+            <label for="allowance">Allowance</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="allowance"
+                id="allowance"
+                [ngClass]="{'invalid-control':validatorObj.allowance.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.allowance.errorMessage}}
+            </span>
+        </div> 
+        <div class="form-group">
+            <label for="salary_Deductions">Salary Deductions</label>
+            <input
+                type="text"
+                class="form-control"
+                formControlName="salary_Deductions"
+                id="salary_Deductions"
+                [ngClass]="{'invalid-control':validatorObj.salary_Deductions.errorMessage}"
+            />
+            <span class = "text-danger" >
+                 {{validatorObj.salary_Deductions.errorMessage}}
+            </span>
+        </div>     
+    </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select
+                id="status"
+                class="form-control"
+                formControlName="status"
+                [ngClass]="{'invalid-control':validatorObj.status.errorMessage}"
+            >
+            <option value = "Active" >Active</option>
+            <option value = "In-Active" >In-Active</option>
+            </select>
+            <span class = "text-danger" >
+                {{validatorObj.status.errorMessage}}
+            </span>
+        </div>
+
+    
+    <button type="submit" [disabled]="employeeForm.invalid" class="btn btn-primary">Save</button>
+    </form>
+    </article>
+    </div>

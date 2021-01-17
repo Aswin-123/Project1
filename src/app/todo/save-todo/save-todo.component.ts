@@ -62,6 +62,7 @@ export class SaveTodoComponent implements OnInit {
       });
     });
   }
+  // tslint:disable-next-line:typedef
   saveTodo(){
     const todoModel: TODO = {...this.todoForm.value,
       startDate: this.todoForm.value.dateGroup.startDate,
@@ -83,6 +84,7 @@ export class SaveTodoComponent implements OnInit {
 );
   }
 
+  // tslint:disable-next-line:typedef
   private setTodoValidations(control: AbstractControl, key: string){
       if (control.pristine || control.valid )
       {
