@@ -21,4 +21,6 @@ export class HomeComponent {
             console.log(`From ParamMap ${item.get('name')} `);
         });
     }
+    Logout(): void{
+        this.securityService.logout()}
 }

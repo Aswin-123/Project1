@@ -4,7 +4,7 @@
         <a
           routerLink="/Home"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLinkActiveOptions]="{ exact: false }"
           >Dashboard</a
         >
       </li>
@@ -30,7 +30,10 @@
           >Employee Details</a
         >
       </li>
-      <li><a>Logout</a></li>
+      <li><a class="btn"routerLink="" (click)="Logout()"
+      >Logout</a></li>
+
+
     </ul>
   </div>
   <div>

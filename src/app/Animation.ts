@@ -27,3 +27,4 @@ export let slide =trigger('slide',[
         ]))
     ])
 ])
+ 
