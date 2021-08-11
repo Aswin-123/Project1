@@ -13,16 +13,16 @@ export class TodoService {
   constructor(private httpClient: HttpClient) { }
 
   public getToDo(): Observable<TODO[]>{
-    return this.httpClient.get<TODO[]>(environment.apiBaseURL + '/TODOTasks' );
+    return this.httpClient.get<TODO[]>(environment.apiBaseURL+'/TODOTasks' );
   }
   public getToDoCompleate(): Observable<TODO[]>{
-    return this.httpClient.get<TODO[]>(environment.apiBaseURL + '/TODOTasks/TODOTasksCompleate' );
+    return this.httpClient.get<TODO[]>(environment.apiBaseURL+'/TODOTasks/TODOTasksCompleate' );
   }
   public getToDoUpcoming(): Observable<TODO[]>{
-    return this.httpClient.get<TODO[]>(environment.apiBaseURL + '/TODOTasks/TODOTasksUpcoming' );
+    return this.httpClient.get<TODO[]>(environment.apiBaseURL+'/TODOTasks/TODOTasksUpcoming' );
   }
-
+  
   public saveToDo(userForm: TODO): Observable<TODO>{
-    return this.httpClient.post<TODO>(environment.apiBaseURL + '/TODOTasks', userForm );
+    return this.httpClient.post<TODO>(environment.apiBaseURL+'/TODOTasks',userForm );
   }
 }

@@ -26,13 +26,12 @@
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.5.0",
     "font-awesome": "^4.7.0",
-    "lodash": "^4.17.20",
-    "lodash-es": "^4.17.15",
+    "ng2-redux": "^5.1.2",
     "primeicons": "^4.1.0",
     "primeng": "^11.0.0-rc.1",
+    "redux": "^4.0.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "web-animations-js": "^2.3.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

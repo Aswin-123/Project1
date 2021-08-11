@@ -13,17 +13,17 @@ export class HttpAuthInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(
-    request: HttpRequest<any>,
+    request: HttpRequest<any>, 
     next: HttpHandler
     ): Observable<HttpEvent<any>> {
-      if (sessionStorage.getItem('todoBearerToken')){
+      if(sessionStorage.getItem("todoBearerToken")){
         request = request.clone({
-          setHeaders: {
-            Authorization: `bearer ${sessionStorage.getItem('todoBearerToken')}`,
-
+          setHeaders:{ 
+            Authorization: `bearer ${sessionStorage.getItem("todoBearerToken")}`,
+            
           }
-        });
+        })
       }
-      return next.handle(request);
+    return next.handle(request);
   }
 }

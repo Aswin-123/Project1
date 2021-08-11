@@ -4,7 +4,7 @@
         <a
           routerLink="/Home"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: false }"
+          [routerLinkActiveOptions]="{ exact: true }"
           >Dashboard</a
         >
       </li>
@@ -17,23 +17,23 @@
         >
         <li *ngIf="securityModel.canAccessTODO">
         <a
+          routerLink="/Home/Employee"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: false }"
+          >Employee Details</a
+        >
+        <li *ngIf="securityModel.canAccessTODO">
+        <a
           routerLink="/Home/task-entry"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >Task Entry</a
         >
-        <li *ngIf="securityModel.canAccessTODO">
-        <a
-          routerLink="/Home/employe-salary"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          >Employee Details</a
-        >
       </li>
-      <li><a class="btn"routerLink="" (click)="Logout()"
+      <li><a
+      routerLink=""
+      (click) ="logout()"       
       >Logout</a></li>
-
-
     </ul>
   </div>
   <div>

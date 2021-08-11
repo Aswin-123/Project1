@@ -13,7 +13,7 @@ export class SecurityService {
 
   constructor(private httpClient: HttpClient){}
 
- private _securityModel: SecurityModel;
+ private _securityModel:SecurityModel;
 
  get securityModel(){
    return this._securityModel;
@@ -23,13 +23,13 @@ export class SecurityService {
 }
   public logout(){
     this.clearSecurityModel();
-    sessionStorage.removeItem('todoBearerToken');
+    sessionStorage.removeItem("todoBearerToken");
   }
   public clearSecurityModel() {
       this.securityModel = {
-        userName: '',
+        userName:"",
         isAuthenticated: false ,
-        bearerToken: '',
+        bearerToken: "",
         canAccessTODO: false ,
         canAccessDashboard: false ,
         canAccessAdmin: false ,
@@ -37,27 +37,27 @@ export class SecurityService {
   }
 
   public Login(userForm: Login): Observable<SecurityModel>{
-    const httpOptions = {
+    const httpOptions ={
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       }),
     };
-    return this.httpClient.post<SecurityModel>(environment.apiBaseURL + '/UserDetails/Login', userForm , httpOptions)
+    return this.httpClient.post<SecurityModel>(environment.apiBaseURL+'/UserDetails/Login',userForm ,httpOptions)
     .pipe(
-      tap(result => {
+      tap(result=>{
         this.clearSecurityModel();
-        Object.assign(this.securityModel, result);
-        if (this.securityModel.isAuthenticated)
+        Object.assign(this.securityModel,result);
+        if(this.securityModel.isAuthenticated)
         {
-          sessionStorage.setItem('todoBearerToken' , this.securityModel.bearerToken);
+          sessionStorage.setItem("todoBearerToken" , this.securityModel.bearerToken)
         }
         else {
           this.clearSecurityModel();
         }
       })
-    );
+    )
   }
   public getUserDetails(): Observable<any[]>{
-    return this.httpClient.get<any[]>(environment.apiBaseURL + '/UserDetails' );
+    return this.httpClient.get<any[]>(environment.apiBaseURL+'/UserDetails' );
   }
 }

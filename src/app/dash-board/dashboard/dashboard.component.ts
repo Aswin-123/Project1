@@ -9,18 +9,18 @@ import { SecurityService } from 'src/app/Security/security.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
-@ViewChild('tabs')tabs: NgbNav;
+export class DashboardComponent implements OnInit,AfterViewInit {
+@ViewChild('tabs')tabs:NgbNav;
   userDetails: any[];
   aaaa: string;
 
 
-  constructor(private route: ActivatedRoute , private securityService: SecurityService) { }
+  constructor(private route: ActivatedRoute , private securityService:SecurityService) { }
 
   ngOnInit(): void {
-
+  
     this.onchangeName('1');
-    this.securityService.getUserDetails().subscribe(item => this.userDetails = item);
+    this.securityService.getUserDetails().subscribe(item=> this.userDetails = item)
   }
 
   ngAfterViewInit(){
@@ -28,26 +28,26 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   onTabChange() {
-    this.aaaa = this.tabs.activeId;
+    this.aaaa =this.tabs.activeId;
 }
   activeTab(){
     return 'ngb-tab-0';
   }
 
-  onchangeName( I: string) {
-    if ( I == '0')
+  onchangeName( I : string) {
+    if( I == '0')
     {
       this.aaaa = 'All';
     }
-    else if ( I == '2')
+    else if( I == '2')
     {
       this.aaaa =  'Completed';
     }
-    else if ( I == '1')
+    else if( I == '1')
     {
       this.aaaa =  'Upcoming';
     }
   }
-
+  
 
 }

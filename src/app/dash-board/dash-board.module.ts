@@ -1,14 +1,14 @@
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule,Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TaskDetailsComponent } from './dashboard/task-details/task-details.component';
 import { TaskListComponent } from './dashboard/task-list.component';
 
 const routes: Routes = [
   {
-    path : '',
+    path : "",
     component : DashboardComponent,
   },
 ];

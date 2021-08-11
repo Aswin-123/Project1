@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import{ HttpClient} from "@angular/common/http"
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -7,10 +7,10 @@ import { environment } from 'src/environments/environment';
 })
 export class TaskServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http : HttpClient) { }
 
   getTaskList(){
-    return this.http.get(environment.apiBaseURL + '/TodoItems');
+    return this.http.get(environment.apiBaseURL+'/TodoItems');
 
   }
 }

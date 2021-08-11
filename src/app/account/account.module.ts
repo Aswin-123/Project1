@@ -13,7 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
-  declarations: [ LoginComponent, RegisterComponent, CustomFieldValidatorDirective, AlreadyExistsValidatorDirective],
+  declarations: [ LoginComponent,RegisterComponent, CustomFieldValidatorDirective, AlreadyExistsValidatorDirective],
   imports: [
     CommonModule,
     FormsModule,

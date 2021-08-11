@@ -7,6 +7,7 @@ import { SaveTodoComponent } from './save-todo/save-todo.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfirmSaveTodoGuard } from './confirm-save-todo.guard';
 import {TableModule} from 'primeng/table';
+//import { ItemlistComponent } from './itemlist/itemlist.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,7 @@ const routes: Routes = [
   },
 ];
 @NgModule({
-  declarations: [TodoComponent, SaveTodoComponent],
+  declarations: [TodoComponent, SaveTodoComponent,],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

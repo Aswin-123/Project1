@@ -1,6 +1,6 @@
 
 
-<div class="grid-table">
+<div @slide class="grid-table">
     <div class="thead">
        <div class="tr">
            <div class="td">Task No</div>          
@@ -8,7 +8,7 @@
            <div class="td">Employee Name</div>
            <div class="td">Remark</div>
            <div class="td">
-               <button @fade class="btn btn-outline-success"(click)="addtaskMasterForm()">
+               <button class="btn btn-outline-success"(click)="addtaskMasterForm()">
                     <i class="fa fa-plus"></i> New Account
                </button>
             </div>
@@ -20,31 +20,31 @@
             </div>
         </div>
     </div> 
-    <div class="tbody">
-        <form  @slide class="tr" [formGroup] = "fg"  *ngFor= "let fg of taskMasterForms.controls; index as i"
+    <div @slide class="tbody">
+        <form  @slide class="tr" [formGroup] = "fg" *ngFor= "let fg of taskMasterForms.controls; index as i"
             (submit)="recordSubmit(fg)">
             <div class="td">
-                <input @slide class="form-control" formControlName ="emp_Id"> 
+                <input class="form-control" formControlName ="emp_Id"> 
             </div>
             <div class="td">
-                <select  @slide class="form-control" formControlName ="id"> 
+                <select class="form-control" formControlName ="id"> 
                     <option value="0">Select</option>
                     <option *ngFor= "let item of TaskList"value="{{item.id}}">{{item.name}}</option>
                 </select > 
             </div>
             <div class="td">
-                <input @slide class="form-control" formControlName ="emp_Name"> 
+                <input class="form-control" formControlName ="emp_Name"> 
             </div>
             <div class="td">
-                <input @slide class="form-control" formControlName ="isComplete"> 
+                <input class="form-control" formControlName ="isComplete"> 
             </div>
-            <div class="td">
-                <button type ="submit" @slide class="btn testclass"[disabled]="fg.invalid"
+            <div @slide class="td">
+                <button type ="submit" class="btn testclass"[disabled]="fg.invalid"
                 [ngClass]="(fg.get('task_Id').value==0)?'btn-success':'btn-outline-dark'"
                 ><i class="fas fa-save fa-lg"></i>   
                 {{fg.get('task_Id').value==0?'Submit':'Update'}}
                 </button> 
-                <button  @slide class="btn btn-light ml-1" (click)="onDelete(fg.get('task_Id').value,i)">
+                <button class="btn btn-light ml-1" (click)="onDelete(fg.get('task_Id').value,i)">
                     <i class="far fa-trash-alt fa-lg text-danger"></i>
                 </button>
             </div>

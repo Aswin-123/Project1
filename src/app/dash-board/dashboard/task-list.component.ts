@@ -9,69 +9,69 @@ import { TodoService } from 'src/app/todo/todo.service';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  @Input() status: string ;
-  tasks: TODO[] = [];
-  todosCom: TODO[] = [];
-  todosUp: TODO[] = [];
-  status1: string ;
+  @Input() status : string ;  
+  tasks:TODO[] = [];
+  todosCom:TODO[] = [];
+  todosUp:TODO[] = [];
+  status1 : string ;  
+
+ 
 
 
-
-
-  constructor(private service: TodoService, private datepipe: DatePipe) { }
+  constructor(private service:TodoService,private datepipe:DatePipe) { }
 
   ngOnInit(): void {
-    this.status1 = 'Completed';
+    this.status1 = "Completed";
     this.getTodo();
     this.getTodoCompleate();
     this.getToDoUpcoming();
-    console.warn('status', this.status);
-    console.warn('status1', this.status1);
+    console.warn("status",this.status);
+    console.warn("status1",this.status1);
   }
   private getTodo()
-  {  this.service.getToDo().subscribe((items) => {
-    items.forEach((items) => {
-      this.tasks.push({...items, autoCloseVM: items.autoClose ? 'Yes' : 'No',
-      startDateVM: this.datepipe.transform(items.startDate, 'longDate'),
-      endDateVM: this.datepipe.transform(items.endDate, 'longDate'),
-      status: this.getStatus(items.endDate ? new Date (items.endDate) : null, new Date(items.startDate)),
-      buttonText: this.getButtonText(items.endDate ? new Date (items.endDate) : null, new Date(items.startDate))
-    });
-    });
-  });
+  {  this.service.getToDo().subscribe((items)=>{
+    items.forEach((items)=>{
+      this.tasks.push({...items,autoCloseVM:items.autoClose? "Yes":"No",
+      startDateVM:this.datepipe.transform(items.startDate,"longDate"),
+      endDateVM:this.datepipe.transform(items.endDate,"longDate"),
+      status: this.getStatus(items.endDate? new Date (items.endDate):null,new Date(items.startDate)),
+      buttonText: this.getButtonText(items.endDate? new Date (items.endDate):null,new Date(items.startDate))
+    })   
+    })
+  })
   }
   private getTodoCompleate()
-  {  this.service.getToDoCompleate().subscribe((items) => {
-    items.forEach((items) => {
-      this.todosCom.push({...items, autoCloseVM: items.autoClose ? 'Yes' : 'No',
-      startDateVM: this.datepipe.transform(items.startDate, 'longDate'),
-      endDateVM: this.datepipe.transform(items.endDate, 'longDate'),
-      status: this.getStatus(items.endDate ? new Date (items.endDate) : null, new Date(items.startDate)),
-      buttonText: this.getButtonText(items.endDate ? new Date (items.endDate) : null, new Date(items.startDate))
-    });
-    });
-  });
+  {  this.service.getToDoCompleate().subscribe((items)=>{
+    items.forEach((items)=>{
+      this.todosCom.push({...items,autoCloseVM:items.autoClose? "Yes":"No",
+      startDateVM:this.datepipe.transform(items.startDate,"longDate"),
+      endDateVM:this.datepipe.transform(items.endDate,"longDate"),
+      status: this.getStatus(items.endDate? new Date (items.endDate):null,new Date(items.startDate)),
+      buttonText: this.getButtonText(items.endDate? new Date (items.endDate):null,new Date(items.startDate))
+    }) 
+    })
+  })
   }
 
   private getToDoUpcoming()
-  {  this.service.getToDoUpcoming().subscribe((items) => {
-    items.forEach((items) => {
-      this.todosUp.push({...items, autoCloseVM: items.autoClose ? 'Yes' : 'No',
-      startDateVM: this.datepipe.transform(items.startDate, 'longDate'),
-      endDateVM: this.datepipe.transform(items.endDate, 'longDate'),
-      status: this.getStatus(items.endDate ? new Date (items.endDate) : null, new Date(items.startDate)),
-      buttonText: this.getButtonText(items.endDate ? new Date (items.endDate) : null, new Date(items.startDate))
-    });
-    });
-  });
+  {  this.service.getToDoUpcoming().subscribe((items)=>{
+    items.forEach((items)=>{
+      this.todosUp.push({...items,autoCloseVM:items.autoClose? "Yes":"No",
+      startDateVM:this.datepipe.transform(items.startDate,"longDate"),
+      endDateVM:this.datepipe.transform(items.endDate,"longDate"),
+      status: this.getStatus(items.endDate? new Date (items.endDate):null,new Date(items.startDate)),
+      buttonText: this.getButtonText(items.endDate? new Date (items.endDate):null,new Date(items.startDate))
+    }) 
+    })
+  })
   }
-  private getStatus(endDate: Date , startDate: Date){
+  private getStatus(endDate:Date ,startDate: Date){
       const currentDate = new Date();
-      if (!endDate)
+      if(!endDate)
       {
           return 'Constant';
       }
-      else if (endDate < currentDate)
+      else if(endDate < currentDate)
       {
         return 'Completed';
       }
@@ -83,13 +83,13 @@ export class TaskListComponent implements OnInit {
         return 'Ongoing';
       }
   }
-  private getButtonText(endDate: Date , startDate: Date){
+  private getButtonText(endDate:Date ,startDate: Date){
     const currentDate = new Date();
-    if (!endDate)
+    if(!endDate)
     {
         return 'Mark it as Done';
     }
-    else if (endDate < currentDate)
+    else if(endDate < currentDate)
     {
       return 'Re-Open';
     }

@@ -12,10 +12,10 @@ export class ConfirmSaveTodoGuard implements CanDeactivate<unknown> {
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (component.todoForm.dirty){
+      if(component.todoForm.dirty){
         return confirm('do you want to navigate from save TODO page?');
       }
-      return true;
+    return true;
   }
-
+  
 }
